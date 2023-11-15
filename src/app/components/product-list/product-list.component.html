@@ -1,0 +1,11 @@
+<div class="table-container">
+  <app-table [displayedProducts]="displayedProducts"></app-table>
+
+  <app-paginator
+    [currentPage]="currentPage"
+    [itemsPerPage]="itemsPerPage"
+    [totalPages]="totalPages"
+    [totalResults]="totalResults"
+    (updateDisplayedProducts)="updateDisplayedProducts($event)"
+  ></app-paginator>
+</div>

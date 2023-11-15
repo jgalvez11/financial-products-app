@@ -1,0 +1,56 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+
+  th,
+  td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  .img-logo {
+    width: 70px;
+  }
+}
+
+.skeleton-row {
+  animation: pulse 1s infinite alternate;
+}
+
+.skeleton-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.skeleton-text {
+  width: 100px;
+  height: 16px;
+  background-color: #f2f2f2;
+  margin: 8px 0;
+}
+
+.skeleton-button {
+  width: 60px;
+  height: 30px;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 4px;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

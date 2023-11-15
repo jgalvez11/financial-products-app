@@ -1,0 +1,44 @@
+<table>
+  <thead>
+    <tr>
+      <th>Logo</th>
+      <th>Nombre del Producto</th>
+      <th>Descripción</th>
+      <th>Fecha de Liberación</th>
+      <th>Fecha de Facturación</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container
+      *ngIf="!displayedProducts || displayedProducts.length === 0; else data"
+    >
+      <tr class="skeleton-row" *ngFor="let _ of [1, 2, 3]">
+        <td><div class="skeleton-logo"></div></td>
+        <td><div class="skeleton-text"></div></td>
+        <td><div class="skeleton-text"></div></td>
+        <td><div class="skeleton-text"></div></td>
+        <td><div class="skeleton-text"></div></td>
+        <td><div class="skeleton-button"></div></td>
+      </tr>
+    </ng-container>
+    <ng-template #data>
+      <tr *ngFor="let product of displayedProducts">
+        <td>
+          <img
+            class="img-logo"
+            [src]="product.logo"
+            [alt]="product.name + '-img'"
+          />
+        </td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.date_release | date : "dd/MM/yyyy" }}</td>
+        <td>{{ product.date_revision | date : "dd/MM/yyyy" }}</td>
+        <td>
+          <button>Click</button>
+        </td>
+      </tr>
+    </ng-template>
+  </tbody>
+</table>
