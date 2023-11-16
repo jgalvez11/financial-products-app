@@ -27,4 +27,13 @@ export class ApiService {
   saveProduct(product: IProduct): Observable<IProduct> {
     return this.http.post<IProduct>(this.apiUrl, product);
   }
+
+  deleteProduct(id: string) {
+    return this.http.delete(this.apiUrl, {
+      params: {
+        id,
+      },
+      responseType: 'text',
+    });
+  }
 }

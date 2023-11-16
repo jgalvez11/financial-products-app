@@ -3,6 +3,25 @@
   <label for="dropdown-toggle" class="dropdown-label">...</label>
   <ul class="dropdown-menu">
     <li><a>Editar</a></li>
-    <li><a>Eliminar</a></li>
+    <li><a (click)="toggleModal()">Eliminar</a></li>
   </ul>
 </div>
+
+<app-modal [show]="modalConfirm">
+  <p class="background-white">
+    Esta seguro de eliminar el producto
+    <strong class="background-white">{{ product.name }}</strong
+    >?
+  </p>
+  <div class="btn-options">
+    <button class="btn-close" (click)="toggleModal()">Cancelar</button>
+    <button class="btn-confirm" (click)="toggleModal(true)">Confirmar</button>
+  </div>
+</app-modal>
+
+<app-modal [show]="modalError">
+  {{ messageError }}
+  <div class="btn-options">
+    <button class="btn-close" (click)="this.modalError = false">Cerrar</button>
+  </div>
+</app-modal>

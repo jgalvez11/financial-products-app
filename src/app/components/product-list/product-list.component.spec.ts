@@ -11,6 +11,7 @@ import { of } from 'rxjs';
 import { IPaginator } from 'src/app/models/interfaces/paginator.interface';
 import { DropdownOptionComponent } from '../dropdown-option/dropdown-option.component';
 import { OptionButtonsComponent } from '../option-buttons/option-buttons.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
@@ -23,7 +24,12 @@ describe('ProductListComponent', () => {
     };
 
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, FormsModule, ReactiveFormsModule],
+      imports: [
+        HttpClientTestingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        RouterTestingModule,
+      ],
       declarations: [
         ProductListComponent,
         TableComponent,

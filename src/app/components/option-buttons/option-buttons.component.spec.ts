@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OptionButtonsComponent } from './option-buttons.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('OptionButtonsComponent', () => {
   let component: OptionButtonsComponent;
@@ -10,7 +11,7 @@ describe('OptionButtonsComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [OptionButtonsComponent],
-      imports: [ReactiveFormsModule]
+      imports: [ReactiveFormsModule, RouterTestingModule],
     });
     fixture = TestBed.createComponent(OptionButtonsComponent);
     component = fixture.componentInstance;

@@ -56,6 +56,10 @@
   border: 1px solid #cac1c1;
 }
 
+.form-control input:disabled {
+  background-color: #ccc !important;
+}
+
 .alert {
   color: #db0808;
 }

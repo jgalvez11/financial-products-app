@@ -1,4 +1,4 @@
-import { DatePipe, formatDate } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {
   AsyncValidatorFn,
@@ -8,7 +8,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, catchError, map, of } from 'rxjs';
-import { ApiService } from 'src/app/services/api.service';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-product-form',
@@ -57,8 +57,8 @@ export class ProductFormComponent implements OnInit {
         ],
       ],
       logo: ['', Validators.required],
-      date_release: ['', Validators.required], // Igual o mayor a la fecha actual
-      date_revision: [{ value: '', disabled: true }, Validators.required], // Un anio posterior a la fecha de liberacion
+      date_release: ['', Validators.required],
+      date_revision: [{ value: '', disabled: true }, Validators.required],
     });
 
     this.calculateDateRevision();

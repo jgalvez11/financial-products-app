@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductRoutingModule } from './product-routing.module';
 import { TableComponent } from 'src/app/components/table/table.component';
 import { PaginatorComponent } from 'src/app/components/paginator/paginator.component';
@@ -20,6 +21,7 @@ import { DropdownOptionComponent } from 'src/app/components/dropdown-option/drop
     CommonModule,
     ProductRoutingModule,
     FormsModule,
+    SharedModule,
     ReactiveFormsModule,
   ],
 })

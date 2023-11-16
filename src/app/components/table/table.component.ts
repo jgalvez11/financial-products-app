@@ -8,4 +8,10 @@ import { IProduct } from '../../models/interfaces/product';
 })
 export class TableComponent {
   @Input() displayedProducts: IProduct[] = [];
+
+  removeItem(id: string) {
+    this.displayedProducts = this.displayedProducts.filter(
+      (product) => product.id !== id
+    );
+  }
 }
