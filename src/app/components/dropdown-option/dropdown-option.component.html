@@ -7,7 +7,7 @@
   </ul>
 </div>
 
-<app-modal [show]="modalConfirm">
+<app-modal [show]="modalConfirm" *ngIf="product">
   <p class="background-white">
     Esta seguro de eliminar el producto
     <strong class="background-white">{{ product.name }}</strong
@@ -19,7 +19,7 @@
   </div>
 </app-modal>
 
-<app-modal [show]="modalError">
+<app-modal [show]="modalError" *ngIf="product">
   {{ messageError }}
   <div class="btn-options">
     <button class="btn-close" (click)="this.modalError = false">Cerrar</button>

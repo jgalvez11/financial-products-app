@@ -6,6 +6,7 @@ import {
   HttpInterceptor,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment.development';
 
 @Injectable()
 export class ApiInterceptor implements HttpInterceptor {
@@ -17,7 +18,7 @@ export class ApiInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<unknown>> {
     const clonedRequest = request.clone({
       setHeaders: {
-        authorId: '10',
+        authorId: environment.authorId,
       },
     });
 

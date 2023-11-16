@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Router } from '@angular/router';
-import { IProduct } from 'src/app/models/interfaces/product';
-import { ApiService } from 'src/app/services/api.service';
+import { IProduct } from '../../models/interfaces/product';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-dropdown-option',
@@ -15,7 +14,7 @@ export class DropdownOptionComponent {
   @Input() product!: IProduct;
   @Output() delete = new EventEmitter<string>();
 
-  constructor(private productService: ApiService, private router: Router) {}
+  constructor(private productService: ApiService) {}
 
   toggleModal(confirmDelete?: boolean) {
     if (confirmDelete) {

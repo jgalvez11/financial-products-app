@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DropdownOptionComponent } from './dropdown-option.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ModalComponent } from '../../shared/modal/modal.component';
 
 describe('DropdownOptionComponent', () => {
   let component: DropdownOptionComponent;
@@ -8,7 +10,8 @@ describe('DropdownOptionComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DropdownOptionComponent]
+      declarations: [DropdownOptionComponent, ModalComponent],
+      imports: [HttpClientTestingModule]
     });
     fixture = TestBed.createComponent(DropdownOptionComponent);
     component = fixture.componentInstance;

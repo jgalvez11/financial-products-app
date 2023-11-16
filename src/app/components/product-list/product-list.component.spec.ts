@@ -8,7 +8,7 @@ import { IProduct } from '../../models/interfaces/product';
 import { EPaginator } from '../../models/enums/paginator.enum';
 import { ApiService } from '../../services/api.service';
 import { of } from 'rxjs';
-import { IPaginator } from 'src/app/models/interfaces/paginator.interface';
+import { IPaginator } from '../../models/interfaces/paginator.interface';
 import { DropdownOptionComponent } from '../dropdown-option/dropdown-option.component';
 import { OptionButtonsComponent } from '../option-buttons/option-buttons.component';
 import { RouterTestingModule } from '@angular/router/testing';
