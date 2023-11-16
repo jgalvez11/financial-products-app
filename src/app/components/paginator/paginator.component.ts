@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { EPaginator } from 'src/app/models/enums/paginator.enum';
-import { IPaginator } from 'src/app/models/interfaces/paginator.interface';
+import { EPaginator } from '../../models/enums/paginator.enum';
+import { IPaginator } from '../../models/interfaces/paginator.interface';
 
 @Component({
   selector: 'app-paginator',

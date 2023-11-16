@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ApiService } from 'src/app/services/api.service';
-import { IProduct } from 'src/app/models/interfaces/product';
-import { IPaginator } from 'src/app/models/interfaces/paginator.interface';
-import { EPaginator } from 'src/app/models/enums/paginator.enum';
+import { ApiService } from '../../services/api.service';
+import { IProduct } from '../../models/interfaces/product';
+import { IPaginator } from '../../models/interfaces/paginator.interface';
+import { EPaginator } from '../../models/enums/paginator.enum';
 
 @Component({
   selector: 'app-product-list',
