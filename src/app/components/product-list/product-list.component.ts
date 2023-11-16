@@ -11,7 +11,8 @@ import { EPaginator } from '../../models/enums/paginator.enum';
 })
 export class ProductListComponent {
   products: IProduct[] = [];
-
+  productsTemp: IProduct[] = [];
+  isSearch: boolean = false;
   displayedProducts: IProduct[] = [];
   totalResults = 0;
   itemsPerPage = 2;
@@ -39,10 +40,28 @@ export class ProductListComponent {
       }
     }
 
+    const filterproducts = this.isSearch ? this.productsTemp : this.products;
+
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
-    this.displayedProducts = this.products.slice(startIndex, endIndex);
-    this.totalResults = this.products.length;
+    this.displayedProducts = filterproducts.slice(startIndex, endIndex);
+    this.totalResults = filterproducts.length;
     this.totalPages = Math.ceil(this.totalResults / this.itemsPerPage);
+    this.isSearch = false;
+  }
+
+  search(term: string) {
+    this.productsTemp =
+      term.trim() !== ''
+        ? this.products.filter((product) =>
+            Object.values(product).some((value) =>
+              value.toString().toLowerCase().includes(term.toLowerCase())
+            )
+          )
+        : [...this.products];
+
+    this.isSearch = true;
+
+    this.updateDisplayedProducts();
   }
 }

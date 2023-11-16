@@ -1,6 +1,12 @@
 <div class="container">
   <div class="input-search">
-    <input type="search" name="search" id="btn-search" placeholder="Buscar" />
+    <input
+      type="search"
+      name="search"
+      id="btn-search"
+      placeholder="Buscar"
+      [formControl]="filterValue"
+    />
   </div>
   <div class="btn-add">
     <button type="button">Agregar</button>

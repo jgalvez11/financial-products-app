@@ -1,5 +1,5 @@
 <div class="table-container">
-  <app-option-buttons></app-option-buttons>
+  <app-option-buttons (searchEvent)="search($event)"></app-option-buttons>
   <app-table [displayedProducts]="displayedProducts"></app-table>
 
   <app-paginator

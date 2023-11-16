@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductListComponent } from './product-list.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TableComponent } from '../table/table.component';
@@ -23,7 +23,7 @@ describe('ProductListComponent', () => {
     };
 
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, FormsModule],
+      imports: [HttpClientTestingModule, FormsModule, ReactiveFormsModule],
       declarations: [
         ProductListComponent,
         TableComponent,
