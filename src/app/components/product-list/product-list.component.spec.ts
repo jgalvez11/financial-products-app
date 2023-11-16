@@ -9,6 +9,8 @@ import { EPaginator } from '../../models/enums/paginator.enum';
 import { ApiService } from '../../services/api.service';
 import { of } from 'rxjs';
 import { IPaginator } from 'src/app/models/interfaces/paginator.interface';
+import { DropdownOptionComponent } from '../dropdown-option/dropdown-option.component';
+import { OptionButtonsComponent } from '../option-buttons/option-buttons.component';
 
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
@@ -22,7 +24,13 @@ describe('ProductListComponent', () => {
 
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, FormsModule],
-      declarations: [ProductListComponent, TableComponent, PaginatorComponent],
+      declarations: [
+        ProductListComponent,
+        TableComponent,
+        PaginatorComponent,
+        OptionButtonsComponent,
+        DropdownOptionComponent,
+      ],
       providers: [{ provide: ApiService, useValue: mockProductService }],
     });
     fixture = TestBed.createComponent(ProductListComponent);

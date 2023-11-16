@@ -17,7 +17,7 @@ describe('ApiInterceptor', () => {
     const mockRequest = new HttpRequest('GET', '/api');
     const mockHandler: HttpHandler = {
       handle: (request: HttpRequest<any>) => {
-        expect(request.headers.get('authorId')).toBe('2');
+        expect(request.headers.get('authorId')).toBe('10');
         return new Observable<HttpEvent<any>>();
       },
     };
