@@ -15,7 +15,7 @@ export class ProductListComponent {
   isSearch: boolean = false;
   displayedProducts: IProduct[] = [];
   totalResults = 0;
-  itemsPerPage = 2;
+  itemsPerPage = 5;
   currentPage = 1;
   totalPages = 0;
 

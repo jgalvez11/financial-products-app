@@ -15,7 +15,7 @@
         const dropdown = document.querySelector(".dropdown");
         const targetElement = event.target;
 
-        if (!dropdown.contains(targetElement)) {
+        if (dropdown && !dropdown.contains(targetElement)) {
           const dropdownCheckbox = dropdown.querySelector(".dropdown-toggle");
           dropdownCheckbox.checked = false;
         }

@@ -15,4 +15,16 @@ export class ApiService {
   getProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(this.apiUrl);
   }
+
+  checkAvailability(id: string): Observable<boolean> {
+    return this.http.get<boolean>(this.apiUrl + '/verification', {
+      params: {
+        id,
+      },
+    });
+  }
+
+  saveProduct(product: IProduct): Observable<IProduct> {
+    return this.http.post<IProduct>(this.apiUrl, product);
+  }
 }

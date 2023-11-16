@@ -3,9 +3,9 @@
   <div class="items-per-page">
     <label>Mostrar:</label>
     <select [(ngModel)]="itemsPerPage" (change)="changeItemsPerPage($event)">
-      <option value="2">2</option>
-      <option value="4">4</option>
-      <option value="6">6</option>
+      <option *ngFor="let item of itemsNumberPerPage" [value]="item">
+        {{ item }}
+      </option>
     </select>
     registros por página
   </div>

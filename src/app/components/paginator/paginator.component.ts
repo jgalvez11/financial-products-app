@@ -1,5 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { EPaginator, ICON_OPTION_PAGINATOR } from '../../models/enums/paginator.enum';
+import {
+  EPaginator,
+  ICON_OPTION_PAGINATOR,
+} from '../../models/enums/paginator.enum';
 import { IPaginator } from '../../models/interfaces/paginator.interface';
 
 @Component({
@@ -9,11 +12,12 @@ import { IPaginator } from '../../models/interfaces/paginator.interface';
 })
 export class PaginatorComponent {
   @Input() totalResults = 0;
-  @Input() itemsPerPage = 2;
+  @Input() itemsPerPage = 5;
   @Input() currentPage = 1;
   @Input() totalPages = 0;
   @Output() updateDisplayedProducts = new EventEmitter<IPaginator>();
   iconOptions = ICON_OPTION_PAGINATOR;
+  itemsNumberPerPage = [5, 10, 15];
 
   goToPage(page: number): void {
     if (page >= 1 && page <= this.totalPages) {
