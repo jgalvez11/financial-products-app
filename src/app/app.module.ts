@@ -9,6 +9,9 @@ import { ApiInterceptor } from './interceptors/api.interceptor';
 import { FormsModule } from '@angular/forms';
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import { TableComponent } from './components/table/table.component';
+import { OptionButtonsComponent } from './components/option-buttons/option-buttons.component';
+import { DropdownOptionComponent } from './components/dropdown-option/dropdown-option.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { TableComponent } from './components/table/table.component';
     ProductListComponent,
     PaginatorComponent,
     TableComponent,
+    OptionButtonsComponent,
+    DropdownOptionComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
   providers: [

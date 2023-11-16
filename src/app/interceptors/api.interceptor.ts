@@ -17,7 +17,7 @@ export class ApiInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<unknown>> {
     const clonedRequest = request.clone({
       setHeaders: {
-        authorId: '2',
+        authorId: '10',
       },
     });
 

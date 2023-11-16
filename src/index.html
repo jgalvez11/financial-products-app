@@ -1,13 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>FinancialProductsApp</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>FinancialProductsApp</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <app-root></app-root>
+
+    <script>
+      document.addEventListener("click", function (event) {
+        const dropdown = document.querySelector(".dropdown");
+        const targetElement = event.target;
+
+        if (!dropdown.contains(targetElement)) {
+          const dropdownCheckbox = dropdown.querySelector(".dropdown-toggle");
+          dropdownCheckbox.checked = false;
+        }
+      });
+    </script>
+  </body>
 </html>
