@@ -1,17 +1,8 @@
 <div class="dropdown" *ngIf="product">
-  <!-- <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle" />
-  <label for="dropdown-toggle" class="dropdown-label">...</label>
-  <ul class="dropdown-menu">
-    <li><a (click)="goToPageEdit()">Editar</a></li>
-    <li><a (click)="toggleModal()">Eliminar</a></li>
-  </ul> -->
-  <div class="btn-options">
-    <button class="btn-edit" type="button" (click)="goToPageEdit()">
-      Editar
-    </button>
-    <button class="btn-delete" type="button" (click)="toggleModal()">
-      Eliminar
-    </button>
+  <button class="dropdown-btn">...</button>
+  <div class="dropdown-content">
+    <a (click)="goToPageEdit()">Editar</a>
+    <a (click)="toggleModal()">Eliminar</a>
   </div>
 </div>
 
