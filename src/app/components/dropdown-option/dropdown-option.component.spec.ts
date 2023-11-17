@@ -11,7 +11,7 @@ describe('DropdownOptionComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [DropdownOptionComponent, ModalComponent],
-      imports: [HttpClientTestingModule]
+      imports: [HttpClientTestingModule],
     });
     fixture = TestBed.createComponent(DropdownOptionComponent);
     component = fixture.componentInstance;
@@ -21,4 +21,12 @@ describe('DropdownOptionComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should initialize properties correctly', () => {
+    expect(component.product).toBeUndefined();
+    expect(component.modalConfirm).toBe(false);
+    expect(component.modalError).toBe(false);
+    expect(component.messageError).toBeUndefined();
+  });
+
 });

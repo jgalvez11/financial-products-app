@@ -2,7 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  padding: 2em 1em;
+  background: #ffffff;
+
+  div,
+  div label,
+  div span,
+  div select {
+    background: #ffffff;
+  }
 
   button {
     padding: 8px 12px;

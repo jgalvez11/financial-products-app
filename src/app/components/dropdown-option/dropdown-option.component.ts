@@ -1,15 +1,15 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProduct } from '../../models/interfaces/product';
 import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
-import { EStorageData } from 'src/app/models/enums/storage.enum';
+import { EStorageData } from '../../models/enums/storage.enum';
 
 @Component({
   selector: 'app-dropdown-option',
   templateUrl: './dropdown-option.component.html',
   styleUrls: ['./dropdown-option.component.scss'],
 })
-export class DropdownOptionComponent implements OnInit {
+export class DropdownOptionComponent {
   @Input() product!: IProduct;
   @Output() delete = new EventEmitter<string>();
   modalConfirm: boolean = false;
@@ -17,10 +17,6 @@ export class DropdownOptionComponent implements OnInit {
   messageError!: string;
 
   constructor(private productService: ApiService, private router: Router) {}
-
-  ngOnInit(): void {
-    console.log(this.product);
-  }
 
   toggleModal(confirmDelete?: boolean) {
     if (confirmDelete) {
@@ -39,7 +35,6 @@ export class DropdownOptionComponent implements OnInit {
   }
 
   goToPageEdit() {
-    console.log(this.product.id);
     localStorage.setItem(EStorageData.PRODUCT, JSON.stringify(this.product));
     this.router.navigate(['/form/' + this.product.id]);
   }

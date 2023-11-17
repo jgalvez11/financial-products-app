@@ -1,4 +1,3 @@
-import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {
   AsyncValidatorFn,
@@ -9,8 +8,9 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, catchError, map, of } from 'rxjs';
 import { ApiService } from '../../services/api.service';
-import { EStorageData } from 'src/app/models/enums/storage.enum';
-import { IProduct } from 'src/app/models/interfaces/product';
+import { EStorageData } from '../../models/enums/storage.enum';
+import { IProduct } from '../../models/interfaces/product';
+import { ConvertDateService } from '../../services/utils/convert-date.service';
 
 @Component({
   selector: 'app-product-form',
@@ -26,7 +26,7 @@ export class ProductFormComponent implements OnInit {
     private fb: FormBuilder,
     private productService: ApiService,
     private router: Router,
-    private datePipe: DatePipe,
+    private convertDate: ConvertDateService,
     private activatedRoute: ActivatedRoute
   ) {
     const today = new Date();
@@ -36,7 +36,7 @@ export class ProductFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
-    this.calculateDateRevision();
+    this.convertDate.calculateDateRevision(this.productForm);
     this.validateIsNewOrEdit();
   }
 
@@ -85,22 +85,6 @@ export class ProductFormComponent implements OnInit {
     };
   }
 
-  calculateDateRevision() {
-    this.productForm
-      .get('date_release')
-      ?.valueChanges.subscribe((dateRelease: Date) => {
-        if (dateRelease) {
-          const newDate = new Date(dateRelease);
-          newDate.setFullYear(newDate.getFullYear() + 1);
-          this.productForm
-            .get('date_revision')
-            ?.setValue(this.datePipe.transform(newDate, 'yyyy-MM-dd', 'GMT-5'));
-        } else {
-          this.productForm.get('date_revision')?.reset();
-        }
-      });
-  }
-
   validateIsNewOrEdit() {
     if (this.productId) {
       const product: IProduct = JSON.parse(
@@ -116,9 +100,13 @@ export class ProductFormComponent implements OnInit {
           .split('T')[0];
         this.productForm.setValue(product);
       } else {
-        this.router.navigate(['/form']);
+        this.navigateToFormPage();
       }
     }
+  }
+
+  public navigateToFormPage(): void {
+    this.router.navigate(['/form']);
   }
 
   save() {

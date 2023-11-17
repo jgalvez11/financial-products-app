@@ -33,8 +33,8 @@
         </td>
         <td>{{ product.name }}</td>
         <td>{{ product.description }}</td>
-        <td>{{ product.date_release | date : "dd/MM/yyyy" }}</td>
-        <td>{{ product.date_revision | date : "dd/MM/yyyy" }}</td>
+        <td>{{ product.date_release | date : "dd/MM/yyyy": 'GMT-5' }}</td>
+        <td>{{ product.date_revision | date : "dd/MM/yyyy": 'GMT-5' }}</td>
         <td style="text-align: center">
           <app-dropdown-option
             [product]="product"
