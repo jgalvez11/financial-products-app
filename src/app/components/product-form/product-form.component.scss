@@ -1,0 +1,84 @@
+.table-container {
+  max-width: 600px;
+  overflow-x: auto;
+  text-align: center;
+  margin: 2em auto;
+}
+
+.card-title,
+.card-title label,
+.card-content,
+.card-content .form,
+.card-content form,
+.card-content form .btn-options,
+.card-content form .form-control,
+.card-content form .form-control label,
+.card-content form .form-control span,
+.card-content form .form-control input {
+  background: #ffffff;
+}
+
+.card-title {
+  padding: 1em;
+  border-bottom: 2px solid #cac1c1;
+}
+
+.card-title label {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.card-content .form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2em;
+}
+
+.form-control {
+  display: inline-grid;
+  margin: 1em 2em 0 2em;
+}
+
+.form-control label {
+  text-align: start;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+.form-control span {
+  text-align: start;
+  margin-top: 0.3em;
+}
+
+.form-control input {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #cac1c1;
+}
+
+.form-control input:disabled {
+  background-color: #ccc !important;
+}
+
+.alert {
+  color: #db0808;
+}
+
+.btn-options button {
+  margin: 2em 1em;
+  border: none;
+  padding: 0.8em 1.5em;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.btn-options .btn-reset {
+  cursor: pointer;
+  color: #070776;
+}
+
+.btn-options .btn-add:enabled {
+  cursor: pointer;
+  background: #fad31f;
+  color: #070776;
+}

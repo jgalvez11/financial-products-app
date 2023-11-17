@@ -1,0 +1,49 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 1em;
+  background: #ffffff;
+
+  div,
+  div label,
+  div span,
+  div select {
+    background: #ffffff;
+  }
+
+  button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .total-results {
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  .items-per-page {
+    label {
+      margin-right: 6px;
+    }
+
+    select {
+      padding: 6px;
+      border-radius: 4px;
+    }
+  }
+
+  .paginator {
+    span {
+      margin: 0 10px;
+    }
+  }
+
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

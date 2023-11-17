@@ -1,0 +1,33 @@
+<div class="pagination">
+  <div class="total-results">Total de resultados: {{ totalResults }}</div>
+  <div class="items-per-page">
+    <label>Mostrar:</label>
+    <select [(ngModel)]="itemsPerPage" (change)="changeItemsPerPage($event)">
+      <option *ngFor="let item of itemsNumberPerPage" [value]="item">
+        {{ item }}
+      </option>
+    </select>
+    registros por página
+  </div>
+  <div class="paginator">
+    <button [disabled]="currentPage === 1" (click)="goToPage(1)">
+      {{ iconOptions.INITIAL }}
+    </button>
+    <button [disabled]="currentPage === 1" (click)="goToPage(currentPage - 1)">
+      {{ iconOptions.PREVIOUS }}
+    </button>
+    <span>Página {{ currentPage }} de {{ totalPages }}</span>
+    <button
+      [disabled]="currentPage === totalPages"
+      (click)="goToPage(currentPage + 1)"
+    >
+      {{ iconOptions.NEXT }}
+    </button>
+    <button
+      [disabled]="currentPage === totalPages"
+      (click)="goToPage(totalPages)"
+    >
+      {{ iconOptions.END }}
+    </button>
+  </div>
+</div>

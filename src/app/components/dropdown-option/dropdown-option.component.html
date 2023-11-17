@@ -1,0 +1,26 @@
+<div class="dropdown" *ngIf="product">
+  <button class="dropdown-btn">...</button>
+  <div class="dropdown-content">
+    <a (click)="goToPageEdit()">Editar</a>
+    <a (click)="toggleModal()">Eliminar</a>
+  </div>
+</div>
+
+<app-modal [show]="modalConfirm" *ngIf="product">
+  <p class="background-white">
+    Esta seguro de eliminar el producto
+    <strong class="background-white">{{ product.name }}</strong
+    >?
+  </p>
+  <div class="btn-options">
+    <button class="btn-close" (click)="toggleModal()">Cancelar</button>
+    <button class="btn-confirm" (click)="toggleModal(true)">Confirmar</button>
+  </div>
+</app-modal>
+
+<app-modal [show]="modalError" *ngIf="product">
+  {{ messageError }}
+  <div class="btn-options">
+    <button class="btn-close" (click)="this.modalError = false">Cerrar</button>
+  </div>
+</app-modal>

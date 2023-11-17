@@ -1,0 +1,12 @@
+<div class="table-container">
+  <app-option-buttons (searchEvent)="search($event)"></app-option-buttons>
+  <app-table [displayedProducts]="displayedProducts"></app-table>
+
+  <app-paginator
+    [currentPage]="currentPage"
+    [itemsPerPage]="itemsPerPage"
+    [totalPages]="totalPages"
+    [totalResults]="totalResults"
+    (updateDisplayedProducts)="updateDisplayedProducts($event)"
+  ></app-paginator>
+</div>
