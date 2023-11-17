@@ -80,3 +80,22 @@
 .btn-confirm {
   background: #fad31f;
 }
+
+.btn-options button {
+  margin: 0.5em 0;
+  width: 60px;
+  cursor: pointer;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  color: #070776;
+  font-size: 10px;
+}
+
+.btn-options .btn-edit {
+  background: #7bea7b;
+}
+
+.btn-options .btn-delete {
+  background: #e06969;
+}

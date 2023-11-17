@@ -28,6 +28,10 @@ export class ApiService {
     return this.http.post<IProduct>(this.apiUrl, product);
   }
 
+  updateProduct(product: IProduct): Observable<IProduct> {
+    return this.http.put<IProduct>(this.apiUrl, product);
+  }
+
   deleteProduct(id: string) {
     return this.http.delete(this.apiUrl, {
       params: {

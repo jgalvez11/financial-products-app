@@ -1,10 +1,18 @@
-<div class="dropdown">
-  <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle" />
+<div class="dropdown" *ngIf="product">
+  <!-- <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle" />
   <label for="dropdown-toggle" class="dropdown-label">...</label>
   <ul class="dropdown-menu">
-    <li><a>Editar</a></li>
+    <li><a (click)="goToPageEdit()">Editar</a></li>
     <li><a (click)="toggleModal()">Eliminar</a></li>
-  </ul>
+  </ul> -->
+  <div class="btn-options">
+    <button class="btn-edit" type="button" (click)="goToPageEdit()">
+      Editar
+    </button>
+    <button class="btn-delete" type="button" (click)="toggleModal()">
+      Eliminar
+    </button>
+  </div>
 </div>
 
 <app-modal [show]="modalConfirm" *ngIf="product">
