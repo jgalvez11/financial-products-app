@@ -59,7 +59,6 @@ describe('TableComponent', () => {
 
   it('should not remove any item if id does not exist', () => {
     component.displayedProducts = [...mockProducts];
-    console.log(component.displayedProducts);
 
     component.removeItem('123456');
 

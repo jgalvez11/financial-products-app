@@ -66,4 +66,61 @@ describe('ApiService', () => {
 
     req.flush(mockProducts);
   });
+
+  it('should save product via POST', () => {
+    const mockProduct: IProduct = {
+      id: '1',
+      name: 'Product 1',
+      description: 'Description product 1',
+      logo: 'logo 1',
+      date_release: 'date release 1',
+      date_revision: 'date revision 1',
+    };
+
+    service.saveProduct(mockProduct).subscribe((product: IProduct) => {
+      expect(product).toEqual(mockProduct);
+    });
+
+    const mockUrl = environment.services.product;
+    const req = httpTestingController.expectOne(mockUrl);
+
+    expect(req.request.method).toEqual('POST');
+
+    req.flush(mockProduct);
+  });
+
+  it('should update product via PUT', () => {
+    const mockProduct: IProduct = {
+      id: '1',
+      name: 'Product 1',
+      description: 'Description product 1',
+      logo: 'logo 1',
+      date_release: 'date release 1',
+      date_revision: 'date revision 1',
+    };
+
+    service.updateProduct(mockProduct).subscribe((product: IProduct) => {
+      expect(product).toEqual(mockProduct);
+    });
+
+    const mockUrl = environment.services.product;
+    const req = httpTestingController.expectOne(mockUrl);
+
+    expect(req.request.method).toEqual('PUT');
+
+    req.flush(mockProduct);
+  });
+
+  it('should delete product via DELETE', () => {
+    const mockProductId = '1';
+
+    service.deleteProduct(mockProductId).subscribe(() => {});
+
+    const mockUrl = environment.services.product + `?id=${mockProductId}`;
+    const req = httpTestingController.expectOne(mockUrl);
+
+    expect(req.request.method).toEqual('DELETE');
+
+    req.flush('');
+  });
 });
